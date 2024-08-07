@@ -1,7 +1,9 @@
 import { UseWeatherContext } from "../context/WeatherContext"
+import Loading from "./Loading"
+import NotFound from "./NotFound"
 
 const RenderWeather = () => {
-    const {weather, loading} = UseWeatherContext()
+    const {weather, loading, error} = UseWeatherContext()
     const weatherToUse = weather.data
     //console.log("Clima a render",weatherToUse)
     //console.log("Iconito", weatherToUse.current.condition.icon)
@@ -16,7 +18,8 @@ const RenderWeather = () => {
      } */
     return(
         <>
-            {loading && <h1>Cargando (renderWeather)</h1>}
+            {error && <NotFound></NotFound>}
+            {loading && <Loading></Loading>}
             <div className="container">
                 <h2 className="title">{weatherToUse.location.name}, {weatherToUse.location.country}</h2>
                 <h1 className="temp">{weatherToUse.current.temp_c}°C</h1>

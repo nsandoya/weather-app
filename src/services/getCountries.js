@@ -7,7 +7,7 @@ const getCountries = async () => {
         url: url,
     }
     let response = await ajax(options)
-    console.log(response)
+    //console.log(response)
     return response
 }
 
