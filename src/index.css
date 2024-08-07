@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.background{
+  background-image: url("../src/assets/background.png");
+  position: fixed ;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.container{
+    /* position: relative; */
+    max-width: 600px;
+    margin: 10vh auto;
+    padding: 1.5rem;
+    backdrop-filter: blur(7px);
+    /* box-shadow:  */
+    background-color: #8684922c;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas: ". title ."
+                         ". clouds ."
+                         ". temp ."
+                         ". temp ."
+                         "stats stats stats";
+
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+}
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+    grid-template-areas: "hum temp-sen  other";
+
+    margin-top: 20px;
+}
+
+.title{
+    grid-area: title;
+}
+
+.temp{
+    grid-area: temp;
+    font-size: 4rem;
+}
+
+.clouds{
+    grid-area: clouds;
+    color: #f5f5f596
+}
+.stats{
+    grid-area: stats;
+
+    border-top: solid 1px #f5f3f0;
+    padding-top: 20px;
+}
+
+
+.term-sensation{
+    grid-area: temp-sen;
+}
+.humidity{
+    grid-area: hum
+}
+.other{
+    grid-area: other;
+}
+
+.term-sensation, .humidity, .other{
+    display: grid;
+    grid-template-columns: 1fr;
+    color: #f5f5f596
+}
+
+.data{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.title, .temp, .clouds, .stats{
+    text-align: center;
+}
+
+.search-cont{
+    display: grid;
+    grid-template-columns: 30% 10%;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.search-title{
+    text-align: right;
+    margin-right: 15px;
+}
+
+.weather-icon{
+    /* grid-area: icon; */
+    width: 30px
+}
+
+#search{
+    width: 100%;
+    background-color: #a8a6b62c;
+    color: whitesmoke;
+
+}
+
+#go-search{
+    width: 40px;
+    margin-left: 15px;
+    background-color: whitesmoke;
+}
+
+#search, #go-search{
+    padding: 0.3rem;
+    border-radius: 6px;
+    border: none;
+}
