@@ -3,7 +3,7 @@ import { UseWeatherContext } from "../context/WeatherContext"
 const RenderWeather = () => {
     const {weather, loading} = UseWeatherContext()
     const weatherToUse = weather.data
-    console.log("Clima a render",weatherToUse)
+    //console.log("Clima a render",weatherToUse)
     //console.log("Iconito", weatherToUse.current.condition.icon)
     /* if (loading) {
          console.log("Cargando")

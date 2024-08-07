@@ -1,8 +1,8 @@
 import { ajax } from '../tools/ajax';
 
 const getWeather = async (city) => {
-    console.log("Entró a getWeather")
-    console.log(city)
+    //console.log("Entró a getWeather")
+    //console.log(city)
     const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${city[0]}`;
     const options = {
         method: "GET",
@@ -13,7 +13,7 @@ const getWeather = async (city) => {
         }
       };
     let response = await ajax(options)
-    console.log("Clima",response.data)
+    //console.log("Clima",response.data)
     return response
 }
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import getWeather from "../services/getWeather"
 import { useEffect } from "react";
 import { useState } from "react";
+import getCountries from "../services/getCountries";
 
 
 const WeatherContext = createContext();
@@ -18,6 +19,8 @@ export const UseWeatherContext = () => {
 export const WeatherContextProvider = ({ children }) => {
     const [city, setCity] = useState(["quito"]) 
     const [weather, setWeather] = useState([]) 
+    const [countries, setCountries] = useState()
+    const [suggestedCities, setSuggestedCities] = useState()
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -26,7 +29,11 @@ export const WeatherContextProvider = ({ children }) => {
             setLoading(true); // Iniciar carga
             try {
                 const weatherData = await getWeather(city);
+                const countriesData = await getCountries();
+
                 setWeather(weatherData);
+                setCountries(countriesData);
+
                 setError(null); // Limpiar cualquier error anterior
             } catch (err) {
                 setError(err); // Guardar el error en caso de fallo
@@ -34,15 +41,10 @@ export const WeatherContextProvider = ({ children }) => {
                 setLoading(false); // Finalizar carga
             }
         })();
-     /*  (async () => {
-        // Promesa
-        setWeather(await getWeather(city)) 
-        
-        //console.log(city, weather)
-      })() */
+
     }, [city]);
     //console.log("Clima", weather)
-    const contextValues = {city, weather, setCity, loading, error}
+    const contextValues = {city, weather, setCity, countries, setCountries, suggestedCities, setSuggestedCities, loading, error}
     return(
         <WeatherContext.Provider value={contextValues}>
             {children}

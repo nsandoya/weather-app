@@ -2,6 +2,7 @@ import './App.css';
 import SearchCityWeather from "./components/SearchCityWeather"
 import RenderCityWeather from "./components/RenderWeather"
 import { UseWeatherContext } from './context/WeatherContext';
+import { SuggestedCitiesList } from './components/SuggestedCities';
 
 const App = () => {
     const { loading, error} = UseWeatherContext();
@@ -13,15 +14,15 @@ const App = () => {
     if (error) {
         return <p>Error: {error}</p>;
     }
-  // Al implementar el componente App, realiza esto
-  // Y qué es esto? Es una emulación del life cycle del componente, lograda con hooks
+
       return(
       <>
         <SearchCityWeather></SearchCityWeather>
+        <SuggestedCitiesList></SuggestedCitiesList>
         <RenderCityWeather></RenderCityWeather>
       </>
     )
-  // Poner aquí los componentes SearchInput y RenderWeather
+
 }
 
 export default App
