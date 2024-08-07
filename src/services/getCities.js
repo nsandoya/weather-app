@@ -1,7 +1,7 @@
 import { ajax } from '../tools/ajax.js';
 
 const getCities = async () => {
-    const url = 'https://spott.p.rapidapi.com/places';
+    const url = 'https://spott.p.rapidapi.com/places'; // Esta API no me ayuda :()
     const options = {
         method: 'GET',
         url: url,

@@ -3,8 +3,10 @@ import { UseWeatherContext } from "../context/WeatherContext";
 
 const SearchCityWeather = () => {
     const [inputValue, setInputValue] = useState('');
-    const {setCity} = UseWeatherContext()
+    const {city, setCity, cities} = UseWeatherContext()
     
+    // Una vez tengo todos los países y ciudades, los guardo en sus states, y filtro el input del usuario en esos states. Al hacer click en la lista, uso el nombre del item (la ciudad) y la envío como argumento a setCity
+
     const handleSearch = () => {
         if(inputValue.trim()){
             setCity([inputValue.trim()])
@@ -15,6 +17,10 @@ const SearchCityWeather = () => {
     const handleKeyPress = (e) => {
             if (e.key === "Enter") {
                 handleSearch();
+            }else{
+                //console.log(inputValue)
+                let inputResult = cities.filter(cityItem => cityItem == city)
+                console.log(inputResult)
             }
     }
 

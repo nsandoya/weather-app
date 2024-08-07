@@ -2,7 +2,7 @@ import './App.css';
 import SearchCityWeather from "./components/SearchCityWeather"
 import RenderCityWeather from "./components/RenderWeather"
 import { UseWeatherContext } from './context/WeatherContext';
-import { SuggestedCitiesList } from './components/SuggestedCities';
+//import { SuggestedCitiesList } from './components/SuggestedCities';
 
 const App = () => {
     const { loading, error} = UseWeatherContext();
@@ -18,7 +18,7 @@ const App = () => {
       return(
       <>
         <SearchCityWeather></SearchCityWeather>
-        <SuggestedCitiesList></SuggestedCitiesList>
+        {/* <SuggestedCitiesList></SuggestedCitiesList> */}
         <RenderCityWeather></RenderCityWeather>
       </>
     )
