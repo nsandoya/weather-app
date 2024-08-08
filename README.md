@@ -1,6 +1,6 @@
-# React + Vite
+# weather-app
+This is a Vite + React project :) | A classic for React students: The first step for greater things
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
